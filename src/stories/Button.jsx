@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled, { css } from "styled-components";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
 const getVariantStyles = ({ primary = false, theme }) =>
   primary
