@@ -22,7 +22,7 @@ export const lightTheme = {
   },
   typography: {
     type: {
-      primary: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+      primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
       code: '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
     },
     weight: {
@@ -42,5 +42,19 @@ export const lightTheme = {
       l2: 40,
       l3: 48,
     },
+  },
+};
+
+export const darkTheme = {
+  ...lightTheme,
+  colors: {
+    background: "#1b1c1d",
+    backgroundInverse: "#333333",
+    positive: "#9fd986",
+    negative: "#df987d",
+    primary: "#d43369",
+    secondary: "#1b8bd0",
+    tertiary: "#DDDDDD",
+    text: "#FFFFFF",
   },
 };

@@ -1,14 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import { Button } from './Button';
-import './header.css';
+import { Button } from "./Button";
+import "./header.css";
+
+const StyledHeader = styled.h1`
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+const StyledUserWelcome = styled.span`
+  color: ${({ theme }) => theme.colors.text};
+  font-size: ${({ theme }) => theme.typography.size.s2}px;
+  margin-right: ${({ theme }) => theme.spacing.padding.medium}px;
+`;
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className="wrapper">
       <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <g fill="none" fillRule="evenodd">
             <path
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
@@ -24,20 +40,25 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <StyledHeader>Acme</StyledHeader>
       </div>
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            <StyledUserWelcome>
               Welcome, <b>{user.name}</b>!
-            </span>
+            </StyledUserWelcome>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button
+              primary
+              size="small"
+              onClick={onCreateAccount}
+              label="Sign up"
+            />
           </>
         )}
       </div>
